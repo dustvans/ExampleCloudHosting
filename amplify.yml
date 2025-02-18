@@ -1,0 +1,17 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - cd amplify-example
+        - npm install
+    build:
+      commands:
+        - npm run build
+  artifacts:
+    baseDirectory: amplify-example/build
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - amplify-example/node_modules/**/*
